@@ -44,6 +44,22 @@ import CameraRollPicker from 'react-native-camera-roll-picker';
 - `emptyTextStyle`: Styles to apply to the `emptyText`. (Default: `textAlign: 'center'`)
 
 ## Run Example
+
+## Methods
+Use a component ref to use these methods.
+
+Example:
+```
+<CameraRollPicker
+  callback={this.getSelectedImages}
+  ref={ref => this._cameraRollPicker = ref}
+/>
+
+Then call a method like this: this._cameraRollPicker.refresh()
+```
+
+- `refresh()` : Force a reload of all media from the CameraRoll.
+
 ```
 $ git clone https://github.com/jeanpan/react-native-camera-roll-picker.git
 $ cd react-native-camera-roll-picker
