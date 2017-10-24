@@ -18,7 +18,6 @@ class CameraRollPicker extends Component {
 
     this.initialState = {
       images: [],
-      selected: this.props.selected,
       lastCursor: null,
       initialLoading: true,
       loadingMore: false,
@@ -26,7 +25,7 @@ class CameraRollPicker extends Component {
       dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
     };
 
-    this.state = this.initialState;
+    this.state = { ...this.initialState, selected: this.props.selected };
   }
 
   refresh() {
