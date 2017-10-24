@@ -22,10 +22,13 @@ class CameraRollPicker extends Component {
       initialLoading: true,
       loadingMore: false,
       noMore: false,
-      dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
     };
 
-    this.state = { ...this.initialState, selected: this.props.selected };
+    this.state = { 
+      ...this.initialState, 
+      selected: this.props.selected,
+      dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+    };
   }
 
   refresh() {
